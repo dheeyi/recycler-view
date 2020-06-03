@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import com.dheeyi.recyclerview.Adpater.RVAdapter;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RVAdapter rvAdapter;
     private ArrayList<String> imagesName = new ArrayList<>();
-    private ArrayList<Integer> imagesID = new ArrayList<>();
+    private ArrayList<String> imagesURL = new ArrayList<>();
+    private final String imgURL = "VlGGqmG,DWX6eGn,EpmxiT3,V9Pcw5j,HkEJ5K4,DaXpXsG,0IRvKpq,XUZw40U,mjR9oaO";
+    private final String imgNam = "Whastapp,Twitter,Youtube,Snapchat,Instagram,Google+,Pinterest,LinkedIN,Facebook";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +25,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initImageBitMaps() {
-        imagesID.add(R.drawable.sp); imagesName.add("Spotify");
-        imagesID.add(R.drawable.fb); imagesName.add("Facebook");
-        imagesID.add(R.drawable.dl); imagesName.add("Duolingo");
-        imagesID.add(R.drawable.mg); imagesName.add("Messenger");
-        imagesID.add(R.drawable.sc); imagesName.add("SnapChat");
-        imagesID.add(R.drawable.tw); imagesName.add("Twitter");
+        imagesURL.addAll(Arrays.asList(imgURL.split(",")));
+        imagesName.addAll(Arrays.asList(imgNam.split(",")));
     }
 
     public void initRecyclerView() {
         recyclerView = findViewById(R.id.rvContainer);
-        rvAdapter = new RVAdapter(this, imagesName, imagesID);
+        rvAdapter = new RVAdapter(this, imagesName, imagesURL);
         recyclerView.setAdapter(rvAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

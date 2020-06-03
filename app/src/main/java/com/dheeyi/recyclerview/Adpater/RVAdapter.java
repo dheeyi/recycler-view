@@ -14,12 +14,12 @@ import java.util.ArrayList;
 public class RVAdapter extends RecyclerView.Adapter<ViewHolder> {
     private Context context;
     private ArrayList<String> imagesName;
-    private ArrayList<Integer> imagesID;
+    private ArrayList<String> imagesURI;
 
-    public RVAdapter(Context context, ArrayList<String> imagesName, ArrayList<Integer> imagesID) {
+    public RVAdapter(Context context, ArrayList<String> imagesName, ArrayList<String> imagesURI) {
         this.context = context;
         this.imagesName = imagesName;
-        this.imagesID = imagesID;
+        this.imagesURI = imagesURI;
     }
 
     @NonNull
@@ -39,11 +39,12 @@ public class RVAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        String URI = "https://i.imgur.com/";
         //set image
         Glide
                 .with(context)
                 .asBitmap()
-                .load(imagesID.get(position))
+                .load(URI + imagesURI.get(position) + ".png")
                 .into(holder.getCivItem());
         //set text
         holder.getTvImage().setText(imagesName.get(position));
