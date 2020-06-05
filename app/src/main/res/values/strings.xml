@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RecyclerView</string>
     <string name="bolivia">Bolivia</string>
+    <string name="playMusic">PLAY</string>
+    <string name="pauseMusic">PAUSE</string>
+    <string name="stopMusic">STOP</string>
 </resources>

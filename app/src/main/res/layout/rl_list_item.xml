@@ -15,7 +15,7 @@
 
     <TextView
         android:id="@+id/tvImage"
-        android:layout_width="match_parent"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:text="@string/bolivia"
         android:layout_toEndOf="@id/civItem"
@@ -25,5 +25,35 @@
         android:textSize="18sp"
         android:layout_marginStart="12sp"
     />
+
+    <ImageView
+        android:id="@+id/ivPlay"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toEndOf="@id/tvImage"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/play"
+        android:contentDescription="@string/playMusic" />
+
+    <ImageView
+        android:id="@+id/ivPause"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toEndOf="@id/ivPlay"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/pause"
+        android:contentDescription="@string/pauseMusic" />
+
+    <ImageView
+        android:id="@+id/ivStop"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toEndOf="@id/ivPause"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/stop"
+        android:contentDescription="@string/stopMusic" />
 
 </RelativeLayout>
